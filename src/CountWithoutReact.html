@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1 id="countDisplay">현재 카운트 값 : 0</h1>
+        <button id="plusButton">+1</button>
+        <button id="minusButton">-1</button>
+        <button id="plusAmountButton">10씩 증가</button>
+    </div>
+
+    <script>
+        // 초기 상태 설정
+        let number = 0;
+
+        // HTML에 있는 요소를 JavaScript에서 선택
+        const countDisplay = document.getElementById('countDisplay');
+        const plusButton = document.getElementById('plusButton');
+        const minusButton = document.getElementById('minusButton');
+        const plusAmountButton = document.getElementById('plusAmountButton');
+
+        // 이벤트 리스너 추가
+        plusButton.addEventListener('click', () => {
+            number += 1;
+            updateDisplay();
+        });
+
+        minusButton.addEventListener('click', () => {
+            number -= 1;
+            updateDisplay();
+        });
+
+        plusAmountButton.addEventListener('click', () => {
+            number += 10;
+            updateDisplay();
+        });
+
+        // 카운트 값을 업데이트하는 함수
+        function updateDisplay() {
+            countDisplay.textContent = `현재 카운트 값 : ${number}`;
+        }
+    </script>
+</body>
+
+</html>
